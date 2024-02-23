@@ -27,3 +27,5 @@ for node in lines[1:]:
     for i in range(lines[curr_node].split()[0]):
         course_graph.add_edge(lines[curr_node].split()[i+1], curr_node)
 
+nx.draw(course_graph, with_labels = True)
+plt.show()
