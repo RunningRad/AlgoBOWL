@@ -19,15 +19,15 @@ course_graph = nx.DiGraph()
 for i in range(n):
     course_graph.add_node(i+1)
 
-#add edges
-
+#add edges and
 #tracking what node were on
 curr_node = 1
 for node in lines[1:]:
     for i in range(int(lines[curr_node].split()[0])):
-        course_graph.add_edge(lines[curr_node].split()[i+1], curr_node)
+        course_graph.add_edge(int(lines[curr_node].split()[i+1]), curr_node)
+    curr_node += 1
 
-
+# Test if the graph is a DAG
 
 nx.draw(course_graph, with_labels = True)
 plt.show()
