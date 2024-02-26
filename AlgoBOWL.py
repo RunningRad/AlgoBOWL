@@ -30,4 +30,5 @@ for node in lines[1:]:
 # Test if the graph is a DAG
 
 nx.draw(course_graph, with_labels = True)
-plt.show()
+plt.savefig("filename.png")
+
