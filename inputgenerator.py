@@ -9,9 +9,7 @@ while current_edge_count > acceptable_edge_count:
     current_edge_count = 0
 
     #generate n
-    n = random.randint(2, 10**3)
-    #n = 20
-
+    n = 465
     #clear file
     with open('gen_input.txt', 'w') as file:
         pass
@@ -41,4 +39,4 @@ while current_edge_count > acceptable_edge_count:
                 file.write(str(edge) + ' ')
             file.write('\n')
                 
-                    
+print(current_edge_count)
