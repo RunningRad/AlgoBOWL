@@ -23,7 +23,7 @@ while current_edge_count > acceptable_edge_count:
             edge_list = []
 
             #get and write m_i
-            m = 10
+            m = random.randint(5, 15)
             current_edge_count += m
             file.write(str(m)+' ')
 
