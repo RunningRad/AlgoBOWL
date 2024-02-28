@@ -31,6 +31,7 @@ for node in lines[1:]:
 # Test if the graph is a DAG
 with open('output.txt', 'w') as file:
     while not nx.is_directed_acyclic_graph(course_graph):
+        print("Removing node")
         num_nodes = course_graph.number_of_nodes()
 
         #Pagerank
