@@ -3,7 +3,7 @@ import sys
 
 for input in range (721, 798):
     # File input for the project
-    inputfile = 'inputs\input_group'+str(input)+'.txt'
+    inputfile = 'inputs\\input_group'+str(input)+'.txt'
     lines = []
     with open(inputfile, 'r') as file:
         for line in file:
@@ -59,7 +59,7 @@ for input in range (721, 798):
     
     nodes_to_del_sa = degree_difference_method(course_graph)
 
-    with open('outputs\output'+str(input)+'.txt', 'w') as file:
+    with open('outputs\\output'+str(input)+'.txt', 'w') as file:
         if len(nodes_to_del_la) < len(nodes_to_del_sa):
             file.write(str(len(nodes_to_del_la))+'\n')
             for node in nodes_to_del_la:
@@ -68,3 +68,4 @@ for input in range (721, 798):
             file.write(str(len(nodes_to_del_sa))+'\n')
             for node in nodes_to_del_sa:
                 file.write(str(node)+' ')
+    print('Finished output for input '+str(input))
