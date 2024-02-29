@@ -28,4 +28,21 @@ for node in lines[1:]:
         course_graph.add_edge(int(lines[curr_node].split()[i+1]), curr_node)
     curr_node += 1
 
-print(number_of_edges(course_graph))
+with open('output.txt', 'w') as file:
+    nodes_to_del = []
+    while not nx.is_directed_acyclic_graph(course_graph):
+        nodeTarget = list(course_graph.nodes)[0]
+        x = 0
+        for n in course_graph:
+            if course_graph.degree(n) > course_graph.degree(nodeTarget):
+                if course_graph.in_degree(n) > 0 and course_graph.out_degree(n) > 0:
+                    nodeTarget = n
+            x = x + 1
+        nodes_to_del.append(nodeTarget)
+        course_graph.remove_node(nodeTarget)
+
+    file.write(str(len(nodes_to_del)) + '\n')
+    for node in nodes_to_del:
+        file.write(str(node) + " ")
+
+
