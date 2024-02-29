@@ -1,7 +1,7 @@
 import networkx as nx
 import copy
 
-for input in range (721, 798):
+for input in range (792, 798):
     # File input for the project
     print("starting output")
     inputfile = 'inputs\\input_group'+str(input)+'.txt'
