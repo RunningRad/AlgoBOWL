@@ -59,7 +59,7 @@ for input in range (721, 798):
     
     nodes_to_del_sa = degree_difference_method(course_graph)
 
-    with open('output'+str(input)+'.txt', 'w') as file:
+    with open('outputs\output'+str(input)+'.txt', 'w') as file:
         if len(nodes_to_del_la) < len(nodes_to_del_sa):
             file.write(str(len(nodes_to_del_la))+'\n')
             for node in nodes_to_del_la:
