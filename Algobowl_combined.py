@@ -1,8 +1,9 @@
 import networkx as nx
-import sys
+import copy
 
 for input in range (721, 798):
     # File input for the project
+    print("starting output")
     inputfile = 'inputs\\input_group'+str(input)+'.txt'
     lines = []
     with open(inputfile, 'r') as file:
@@ -28,18 +29,19 @@ for input in range (721, 798):
         curr_node += 1
     
     #lance algorithm
+    course_graph_la = copy.deepcopy(course_graph)
     nodes_to_del_la = []
-    while not nx.is_directed_acyclic_graph(course_graph):
-        total_degrees = {node: course_graph.in_degree(node) + course_graph.out_degree(node) for node in course_graph.nodes()}
+    while not nx.is_directed_acyclic_graph(course_graph_la):
+        total_degrees = {node: course_graph_la.in_degree(node) + course_graph_la.out_degree(node) for node in course_graph_la.nodes()}
         valid_node_to_delete = False
         while not valid_node_to_delete:
             max_total_degree_node = max(total_degrees, key=total_degrees.get)
 
-            if course_graph.in_degree(max_total_degree_node) == 0 or course_graph.out_degree(max_total_degree_node) == 0:
+            if course_graph_la.in_degree(max_total_degree_node) == 0 or course_graph_la.out_degree(max_total_degree_node) == 0:
                 del total_degrees[max_total_degree_node]
             else:
                 valid_node_to_delete = True
-        course_graph.remove_node(max_total_degree_node)
+        course_graph_la.remove_node(max_total_degree_node)
         nodes_to_del_la.append(max_total_degree_node)
 
     #soumil algorithm
