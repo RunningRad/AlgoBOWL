@@ -36,8 +36,12 @@ with open(output, 'r') as file:
 
 num_of_nodes_to_remove = int(olines[0])
 nodes_to_remove = olines[1].split()
+print(num_of_nodes_to_remove)
 for i in range(0, num_of_nodes_to_remove):
     course_graph.remove_node(int(nodes_to_remove[i]))
 
 is_good_output = nx.is_directed_acyclic_graph(course_graph)
 print(is_good_output)
+
+if (is_good_output is False):
+    print(nx.find_cycle(course_graph))
