@@ -1,1 +1,3 @@
-if you are in the 2024 spring algorithms section and your group is looking at this desperately at thursday at 4:36 PM that is your problem tbh.
+This is the code used for the AlgoBOWL Project for CSCI 406 Spring Sections at the Colorado School of Mines.
+
+This is a competitive group project that involved 75 teams creating inputs and attempting to create an algorithm to create the most efficient outputs.
